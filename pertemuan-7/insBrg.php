@@ -14,6 +14,10 @@
             $conn -> close();
             header("location:index.php");
         }
+        else {
+            $conn -> close();
+            echo "New records failed";
+        }
     } else {
         echo "Sorry, there was an error uploading your file.";
     }
