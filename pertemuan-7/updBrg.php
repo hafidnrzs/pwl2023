@@ -27,6 +27,8 @@
         if ($conn -> query($sql) === TRUE) {
             if (is_file("img/" . $foto_lama) && ($flagFoto == true))
                 unlink("img" . $foto_lama);
+            $conn -> close();
+            header("location:index.php");
         } else {
             $conn -> close();
             echo "New records failed";
