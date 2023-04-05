@@ -13,7 +13,7 @@
     if (isset($_POST["ubah_foto"])) {
         if (upload_foto($_FILES["foto"])) {
             $foto = $_FILES["foto"]["name"];
-            $sql = "UPDATE barang SET nama='$nama', harga='$harga', jml='$jml', keterangan='$ket', foto='$foto' WHERE id='$id'";
+            $sql = "UPDATE barang SET nama='$nama', hrg='$hrg', jml='$jml', keterangan='$ket', foto='$foto' WHERE id='$id'";
         } else {
             $qry = false;
             echo "Foto gagal diupload";
@@ -26,7 +26,7 @@
     if ($qry == true) {
         if ($conn -> query($sql) === TRUE) {
             if (is_file("img/" . $foto_lama) && ($flagFoto == true))
-                unlink("img" . $foto_lama);
+                unlink("img/" . $foto_lama);
             $conn -> close();
             header("location:index.php");
         } else {

@@ -24,7 +24,7 @@
         Foto = <input type="file" name="foto"> <br>
         <input type="hidden" name="foto_lama" value="<?= $foto; ?>">
         <img src="img/<?php echo $foto; ?>" width="150px" height="120px"> <br>
-        <input type="checkbox" name="ubah_foto" value="true">Ceklis jika ingin mengubah foto <br>
+        <input type="checkbox" name="ubah_foto" value="true" checked>Ceklis jika ingin mengubah foto <br>
 
         <input type="submit" value="Update">
     </form>
