@@ -9,7 +9,7 @@
 
     if (upload_foto($_FILES["foto"])) {
         $foto = $_FILES["foto"]["name"];
-        $sql = "INSERT INTO barang (id,nama,hrg,jml,keterangan,foto) VALUES ('$id', '$nama', '$hrg', '$jml', '$ket', '$foto')";
+        $sql = "INSERT INTO barang (id,nama,hrg,jml,keterangan,foto) VALUES ('$id', '$nama', $hrg, $jml, '$ket', '$foto')";
         if ($conn -> query($sql) === TRUE) {
             $conn -> close();
             header("location:index.php");
