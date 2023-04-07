@@ -1,0 +1,110 @@
+body {
+    font-family: Verdana;
+    margin: 0;
+}
+#logo a {
+    font-family: "Audiowide";
+    font-size: 40px;
+    text-decoration: none;
+    color: lightgreen;
+    text-shadow: 1px 1px 2px black;
+}
+header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 15px 60px;
+    position: absolute;
+}
+header ul {
+    display: flex;
+    list-style: none;
+}
+header li {
+    margin-left: 20px;
+}
+header a {
+    color: lightgreen;
+    font-size: 18px;
+    text-decoration: none;
+    text-shadow: 1px 1px 2px black;
+    padding: 10px;
+    font-weight: bold;
+}
+header nav a:hover {
+    background-color: lightgreen;
+    color: azure;
+    border-radius: 8px;
+}
+#hero {
+    height: 450px;
+    background-image: url("../images/product/tmn1.jpg");
+    background-size: cover;
+    background-position: center;
+}
+#hero-content {
+    width: 700px;
+    background-color: rgba(51,51,47,0.8);
+    padding: 50px 0;
+    position: relative;
+    margin: 0 auto;
+    top: 80px;
+    text-align: center;
+    box-shadow: 2px 4px 8px aliceblue;
+    border-radius: 8px;
+}
+#hero-content h1 {
+    color: white;
+    font-family: "Audiowide";
+    font-size: 50px;
+}
+#hero-content p {
+    color: white;   
+    font-size: 24px;
+    margin-bottom: 32px;
+}
+#hero-content a {
+    background-color: yellowgreen;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    color: black;
+    box-shadow: 2px 4px 8px royalblue;
+}
+#hero-content a:hover {
+    background-color: darkolivegreen;
+    color: lightgreen;
+}
+#highlights {
+    padding: 25px;
+    background: linear-gradient(45deg, dodgerBlue, white);
+}
+#highlights-content {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+#highlights-item {
+    margin: 20px;
+}
+#highlights-item img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    box-shadow: 2px 4px 8px rgb(68,67,67);
+    border-radius: 10px;
+}
+#highlights-item p {
+    text-align: center;
+    font-size: 24px;
+    color: rgb(124,123,123);
+}
+#highlights h2 {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 24px 0;
+}
