@@ -15,8 +15,9 @@ if (!empty($_SESSION["cart"])) {
     $max = sizeof($_SESSION["cart"]["arrCart"]);
     for ($i = 0; $i < $max; $i++) {
         foreach ($_SESSION["cart"]["arrCart"][$i] as $key => $val) {
-            echo "$key = $val<br>";
+            echo "$key -> $val&nbsp";
         }
+        echo "<br>";
     }
 
 } else {
