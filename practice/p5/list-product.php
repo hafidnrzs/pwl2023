@@ -1,5 +1,7 @@
 <?php
-$_SESSION["cart"]["arrCart"] = array();
+session_start();
+if (empty($_SESSION["cart"]["arrCart"]))
+    $_SESSION["cart"]["arrCart"] = array();
 ?>
 <!DOCTYPE html>
 <html>

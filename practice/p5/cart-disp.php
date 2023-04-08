@@ -9,15 +9,16 @@ session_start();
 <body>
 <?php
 if (!empty($_SESSION["cart"])) {
-    echo "Jml data: " . sizeof($_SESSION["cart"]["arrCart"]) . "<br>
-    <a href='cart-remove.php'>Kosongkan Cart</a><br><br><br>";
+    echo "Jml data: " . sizeof($_SESSION["cart"]["arrCart"]) . 
+    "<br><a href='cart-remove.php'>Kosongkan Cart</a><br><br><br>";
+    
     $max = sizeof($_SESSION["cart"]["arrCart"]);
     for ($i = 0; $i < $max; $i++) {
-        while(list($key, $val) = each ($_SESSION["cart"]["arrCart"][$i])) {
-            echo "$key -> $val &nbsp";
+        foreach ($_SESSION["cart"]["arrCart"][$i] as $key => $val) {
+            echo "$key = $val<br>";
         }
-        echo "<br>";
     }
+
 } else {
     echo "Cart kosong";
 }
