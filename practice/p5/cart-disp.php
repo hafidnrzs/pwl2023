@@ -8,6 +8,11 @@ session_start();
 </head>
 <body>
 <?php
+// testing print session array
+echo "<pre>";
+print_r($_SESSION["cart"]);
+echo "</pre>";
+
 if (!empty($_SESSION["cart"])) {
     echo "Jml data: " . sizeof($_SESSION["cart"]["arrCart"]) . 
     "<br><a href='cart-remove.php'>Kosongkan Cart</a><br><br><br>";
