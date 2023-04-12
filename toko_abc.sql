@@ -1,5 +1,5 @@
 /*
-SQLyog Community v13.1.9 (64 bit)
+SQLyog Community v13.2.0 (64 bit)
 MySQL - 10.4.24-MariaDB : Database - toko_abc
 *********************************************************************
 */
@@ -33,22 +33,22 @@ CREATE TABLE `barang` (
 /*Data for the table `barang` */
 
 insert  into `barang`(`id`,`nama`,`hrg`,`jml`,`keterangan`,`foto`) values 
-(1,'aglonema Suksom',45000,10,'','aglonemaSuksom.jpg'),
+(1,'aglonema Suksom',45000,10,'aglonemaSuksom','aglonemaSuksom.jpg'),
 (2,'aglonema Rotundum Aceh',30000,10,'-','aglonemaRotundumAceh.jpg'),
 (3,'aglonemaRoDudAnjamani',75000,10,'-','aglonemaRoDudAnjamani.jpg'),
 (4,'aglonemaSnowWhiteRemaja',77,10,'-','aglonemaSnowWhiteRemaja.jpg'),
-(5,'aglonemaSuperWhite',90000,10,'-','aglonemaSuperWhite.jpg'),
+(5,'aglonemaSuperWhite',90000,50,'-','aglonemaSuperWhite.jpg'),
 (6,'aglonemaVenus',90000,10,'77','aglonemaVenus.jpg'),
 (7,'aglonemaRedAnjamaniDewasa',75000,10,'-','aglonemaRedAnjamaniDewasa.jpg'),
 (8,'aglonemaAyunindi',35000,10,'-','aglonemaAyunindi.jpg'),
-(9,'aglonemaKhocin',35000,10,'-','aglonemaKhocin.jpg');
+(9,'aglonemaKhocin',35000,5,'-','aglonemaKhocin.jpg');
 
 /*Table structure for table `member` */
 
 DROP TABLE IF EXISTS `member`;
 
 CREATE TABLE `member` (
-  `id` int(11) DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nama_member` varchar(40) DEFAULT NULL,
   `email` varchar(30) DEFAULT NULL,
   `telp` varchar(30) DEFAULT NULL,
@@ -58,10 +58,16 @@ CREATE TABLE `member` (
   `gender` varchar(10) DEFAULT NULL,
   `username` varchar(20) DEFAULT NULL,
   `password` varchar(100) DEFAULT NULL,
-  `foto` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `foto` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `member` */
+
+insert  into `member`(`id`,`nama_member`,`email`,`telp`,`alamat`,`kota`,`provinsi`,`gender`,`username`,`password`,`foto`) values 
+(1,'agus','agus@gmail.com','1234','Jl Melati IV 212','Semarang','Jateng','1','agus','123','orang3.jpg'),
+(2,'joko','joko@gmail.com',NULL,'Jl Bambu Seru','Semarang','Jateng',NULL,'joko','123','avatar_gr2.jpg'),
+(3,'Adul','adul@gmail.com',NULL,'Jl Melati Sukma 12','Pekalongan','Jateng',NULL,'adul','123','avatar_smoke.jpg');
 
 /*Table structure for table `tborder` */
 
@@ -108,13 +114,16 @@ CREATE TABLE `user` (
   `password` varchar(100) NOT NULL,
   `foto` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`iduser`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `user` */
 
 insert  into `user`(`iduser`,`username`,`password`,`foto`) values 
 (1,'admin','123','aglonemaSuksom.jpg'),
-(2,'Fauzan','123','foto1.jpg');
+(2,'Fauzan','123','foto1.jpg'),
+(3,'amin aaaaa','123456','foto2.jpg'),
+(4,'aaa','12345','foto3.jpg'),
+(5,'Kiko','123','orang3.jpg');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
