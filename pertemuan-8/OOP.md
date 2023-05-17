@@ -47,3 +47,7 @@ Jenis access modifiers:
 Inheritance/pewarisan: Ketika suatu Class mewariskan Class lain.
 Kelas anak akan mewarisi semua property dan method public dan protected dari Class induk.
 Inheritance menggunakan kata kunci extends.
+
+## Overriding Inherited Methods
+
+Method yang diwariskan dari Class induk dapat diganti dengan mendefinisikan ulang method (dengan nama method yang sama) di Class anak.
