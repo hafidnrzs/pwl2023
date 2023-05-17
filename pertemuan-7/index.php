@@ -35,7 +35,7 @@
                         <label class="form-label">Password</label>
                         <input type="password" class="form-control" name="tpass" placeholder="password">
                     </div>
-                    <div class="mb-3" text-center>
+                    <div class="mb-3 text-center">
                         <input type="submit" class="btn btn-primary" value="Login">
                     </div>
                 </form>
