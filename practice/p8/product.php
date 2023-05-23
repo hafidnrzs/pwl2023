@@ -33,7 +33,7 @@ $hasil = $conn->query($sql);
         
         <?php
         $text = "";
-        if ($hasil->num_rows()) {
+        if ($hasil->num_rows > 0) {
             while($r = $hasil->fetch_assoc()) {
                 $text .= "<li>";
                 $text .= "<img src='images/product/".$r['foto']."' alt='".$r['nama']."'>";
@@ -46,10 +46,10 @@ $hasil = $conn->query($sql);
                 $text .= "  <div class='actions'>";
                 $text .= "<a href='cart/addCart.php?productid=".$r['id']."&nama=".$r['nama']."&harga=".$r['hrg']."&jml=1'>Order &#x2192</a>";
                 $text .= "  </div>";
-                $teks .= "</div>";
-                $teks .= "</li>";
+                $text .= "</div>";
+                $text .= "</li>";
             }
-            echo $teks;
+            echo $text;
         }
         ?>
 
