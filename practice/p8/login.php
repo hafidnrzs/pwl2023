@@ -62,7 +62,7 @@
 
                     if ($user == $username && $pass == $password) {
                         $_SESSION["id"] = $id;
-                        header("Location: cart/checkout.php");
+                        header("Location: cart/check-out.php");
                     } else {
                         if ($user != "")
                             echo "<div style='text-align: center'>User tidak valid</div>";

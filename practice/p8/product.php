@@ -14,6 +14,7 @@ $hasil = $conn->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produk</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
     <link rel="stylesheet" href="css/shared.css">
     <link rel="stylesheet" href="css/product.css">
 </head>
@@ -30,29 +31,27 @@ $hasil = $conn->query($sql);
     </header>
     <main class="contain">
         <ul>
-        
-        <?php
-        $text = "";
-        if ($hasil->num_rows > 0) {
-            while($r = $hasil->fetch_assoc()) {
-                $text .= "<li>";
-                $text .= "<img src='images/product/".$r['foto']."' alt='".$r['nama']."'>";
-                $text .= "<div class='item-content'>";
-                $text .= "  <div>";
-                $text .= "      <h2>".$r['nama']."</h2>";
-                $text .= "      <h3>".number_format($r['hrg'], 0)."</h3>";
-                $text .= "      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis minus labore rem recusandae ?</p>";
-                $text .= "  </div>";
-                $text .= "  <div class='actions'>";
-                $text .= "<a href='cart/addCart.php?productid=".$r['id']."&nama=".$r['nama']."&harga=".$r['hrg']."&jml=1'>Order &#x2192</a>";
-                $text .= "  </div>";
-                $text .= "</div>";
-                $text .= "</li>";
+            <?php
+            $text = "";
+            if ($hasil->num_rows > 0) {
+                while($r = $hasil->fetch_assoc()) {
+                    $text .= "<li>";
+                    $text .= "<img src='images/product/". $r['foto'] ."' alt='". $r['nama'] ."'>";
+                    $text .= "<div class='item-content'>";
+                    $text .= "  <div>";
+                    $text .= "      <h2>". $r['nama'] ."</h2>";
+                    $text .= "      <h3>". number_format($r['hrg'], 0) ."</h3>";
+                    $text .= "      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis minus labore rem recusandae ?</p>";
+                    $text .= "  </div>";
+                    $text .= "  <div class='actions'>";
+                    $text .= "      <a href='cart/addCart.php?productid=". $r['id'] ."&nama=". $r['nama'] ."&harga=". $r['hrg'] ."&jml=1'>Order &#x2192</a>";
+                    $text .= "  </div>";
+                    $text .= "</div>";
+                    $text .= "</li>";
+                }
+                echo $text;
             }
-            echo $text;
-        }
-        ?>
-
+            ?>
         </ul>
     </main>
     <footer>

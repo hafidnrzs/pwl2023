@@ -19,57 +19,58 @@ session_start();
         <nav>
             <ul>
                 <li><a href="../product.php">Product</a></li>
+                <li><a href="cart-disp.php">Cart</a></li>
                 <li><a href="../about.html">About</a></li>
             </ul>
         </nav>
     </header>
     <div class="cartArea">
-    <?php
-    if (!empty($_SESSION['cart'])) {
-        echo "Jumlah data : ". sizeof($_SESSION['cart']['arrCart']) ."&nbsp&nbsp<a class='btnCart' href='cart-remove.php'>Kosongkan Cart</a>";
-        $max = sizeof($_SESSION['cart']['arrCart']);
-        $text = "<table class='cartTable'>
-            <thead>
-                <tr>
-                    <th scope='col'>No</th>
-                    <th scope='col'>KodeBrg</th>
-                    <th scope='col'>Nama</th>
-                    <th scope='col'>Jumlah</th>
-                    <th scope='col'>Harga</th>
-                    <th scope='col'>Bayar</th>
-                    <th scope='col'></th>
-                </tr>
-            </thead>
-            <tbody>";
-        $sum = 0;
-        for ($i = 0; $i < $max; $i++) {
-            $text .= "<tr><td>". $i + 1 ."</td>";
-            $jml = 0; $hrg = 0;
-            $brg = "";
-            foreach ($_SESSION['cart']['arrCart'][$i] as $key=>$val) {
-                if ($key == "hrg")
-                    $hrg = $val;
-                if ($key == "jml")
-                    $jml = $val;
-                if ($key == "nmBrg")
-                    $brg = $key;
-                $tothrg = $hrg * $jml;
-                if ($key == "jml" || $key == "hrg")
-                    $text .= "<td>". number_format($val, 0) ."</td>";
-                else
-                    $text .= "<td>". $val ."</td>";
+        <?php
+        if (!empty($_SESSION['cart'])) {
+            echo "Jumlah data : ". sizeof($_SESSION['cart']['arrCart']) ."&nbsp&nbsp<a class='btnCart' href='cart-remove.php'>Kosongkan Cart</a>";
+            $max = sizeof($_SESSION['cart']['arrCart']);
+            $text = "<table class='cartTable'>
+                <thead>
+                    <tr>
+                        <th scope='col'>No</th>
+                        <th scope='col'>KodeBrg</th>
+                        <th scope='col'>Nama</th>
+                        <th scope='col'>Jml</th>
+                        <th scope='col'>Harga</th>
+                        <th scope='col'>Bayar</th>
+                        <th scope='col'></th>
+                    </tr>
+                </thead>
+                <tbody>";
+            $sum = 0;
+            for ($i = 0; $i < $max; $i++) {
+                $text .= "<tr><td>". $i + 1 ."</td>";
+                $jml = 0; $hrg = 0;
+                $brg = "";
+                foreach ($_SESSION['cart']['arrCart'][$i] as $key=>$val) {
+                    if ($key == "hrg")
+                        $hrg = $val;
+                    if ($key == "jml")
+                        $jml = $val;
+                    if ($key == "nmBrg")
+                        $brg = $key;
+                    $tothrg = $hrg * $jml;
+                    if ($key == "jml" || $key == "hrg")
+                        $text .= "<td>". number_format($val, 0) ."</td>";
+                    else
+                        $text .= "<td>". $val ."</td>";
+                }
+                $sum += $tothrg;
+                $text .= "<td class='kolom-kanan'>". number_format($tothrg, 0) ."</td>";
+                $text .= "<td><a href='cart-item-remove.php?idx=". $i ."' class='btnCart'>Remove</a></td>";
+                $text .= "</tr>";
             }
-            $sum += $tothrg;
-            $text .= "<td class='kolom-kanan'". number_format($tothrg, 0) ."";
-            $text .= "<td><a href='cart-item-remove.php?idx=". $i ."' class='btnCart'>Remove</a></td>";
-            $text .= "</tr>";
-        }
-        $text .= "<tr><td colspan=6 style='text-align: right;'>Total harga: ". number_format($sum, 0) ."</td></tr>";
-        $text .= "</tbody></table>";
-        echo $text;
-    } else
-        echo "Cart Kosong";
-    ?>
+            $text .= "<tr><td colspan=6 style='text-align: right;'>Total harga: ". number_format($sum, 0) ."</td><td></td></tr>";
+            $text .= "</tbody></table>";
+            echo $text;
+        } else
+            echo "Cart Kosong";
+        ?>
         <a href="../login.php" class="btnCart">Checkout</a>
     </div>
     <footer>

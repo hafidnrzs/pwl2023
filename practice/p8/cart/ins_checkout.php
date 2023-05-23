@@ -5,7 +5,7 @@ include "../koneksi.php";
 $idmember = $_POST["hidmember"];
 $pembelian = $_POST["tpembelian"];
 $ekspedisi = $_POST["tekspedisi"];
-$biayaKirim = $_POST["tbiayakirim"];
+$biayaKirim = $_POST["tbiayaKirim"];
 $totalByr = $_POST["ttotalByr"];
 $jenisByr = $_POST["tjenisByr"];
 
@@ -25,8 +25,8 @@ if (!empty($_SESSION['cart'])) {
     $max = sizeof($_SESSION['cart']['arrCart']);
     for ($i = 0; $i < $max; $i++) {
         $productid = $_SESSION['cart']['arrCart'][$i]['productid'];
-        $jml = $_SESSION['cart']['arrCart'][$id]['jml'];
-        $hrg = $_SESSION['cart']['arrCart'][$id]['hrg'];
+        $jml = $_SESSION['cart']['arrCart'][$i]['jml'];
+        $hrg = $_SESSION['cart']['arrCart'][$i]['hrg'];
         $sql = "INSERT INTO tborder_detail (idorder, idbarang, jml, hrg) VALUES ('$orderid', '$productid', '$jml', '$hrg')";
         $conn->query($sql);
         // echo $sql;

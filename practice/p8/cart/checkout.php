@@ -14,6 +14,7 @@ include "../koneksi.php";
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
     <link rel="stylesheet" href="../css/shared.css">
     <link rel="stylesheet" href="../css/cart.css">
+    <link rel="stylesheet" href="../css/cout.css">
 </head>
 <body>
     <header>
@@ -68,7 +69,7 @@ include "../koneksi.php";
                     $text .= "<td>". number_format($tothrg, 0) ."</td>";
                     $text .= "</tr>";
                 }
-                $text .= "<tr><td colspan=5>Total harga: ". $number_format($sum, 0) ."</td></tr>";
+                $text .= "<tr><td colspan=5>Total harga: ". number_format($sum, 0) ."</td></tr>";
                 $text .= "</tbody></table>";
                 echo $text;
             } else
@@ -85,14 +86,14 @@ include "../koneksi.php";
             }
             // echo $sql;
             ?>
-            <form action="ins_checkout.php" method="POST">
+            <form action="ins-checkout.php" method="POST">
                 <input type="hidden" name="hidmember" value="<?= $id; ?>">
                 <div><label for="lbMember">Nama</label></div>
                 <div><input type="text" name="tnama_member" value="<?= $nama_member; ?>" readonly></div>
                 <div><label for="lbNama">Alamat</label></div>
                 <div><input type="text" name="talamat" value="<?= $alamat; ?>" readonly></div>
                 <div><label for="lbJmlBeli">Jumlah Pembelian</label></div>
-                <div><input type="text" name="tpembelian" value="<?= $sum; ?>"></div>
+                <div><input type="text" name="tpembelian" value="<?= $sum; ?>" readonly></div>
                 <div><label for="lbeksped">Ekspedisi</label></div>
                 <div><input type="text" name="tekspedisi"></div>
                 <div><label for="lbBiayaKirim">Biaya Kirim</label></div>
