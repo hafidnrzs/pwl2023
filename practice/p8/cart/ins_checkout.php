@@ -24,7 +24,7 @@ $productid = 0;
 if (!empty($_SESSION['cart'])) {
     $max = sizeof($_SESSION['cart']['arrCart']);
     for ($i = 0; $i < $max; $i++) {
-        $productid = $_SESSION['cart']['arrCart'][$i]['productid'];
+        $productid = $_SESSION['cart']['arrCart'][$i]['productId'];
         $jml = $_SESSION['cart']['arrCart'][$i]['jml'];
         $hrg = $_SESSION['cart']['arrCart'][$i]['hrg'];
         $sql = "INSERT INTO tborder_detail (idorder, idbarang, jml, hrg) VALUES ('$orderid', '$productid', '$jml', '$hrg')";

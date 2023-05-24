@@ -69,7 +69,7 @@ include "../koneksi.php";
                     $text .= "<td>". number_format($tothrg, 0) ."</td>";
                     $text .= "</tr>";
                 }
-                $text .= "<tr><td colspan=5>Total harga: ". number_format($sum, 0) ."</td></tr>";
+                $text .= "<tr><td colspan=5>Total harga: ". number_format($sum, 0) ."</td><td></td></tr>";
                 $text .= "</tbody></table>";
                 echo $text;
             } else
@@ -86,7 +86,7 @@ include "../koneksi.php";
             }
             // echo $sql;
             ?>
-            <form action="ins-checkout.php" method="POST">
+            <form action="ins_checkout.php" method="POST">
                 <input type="hidden" name="hidmember" value="<?= $id; ?>">
                 <div><label for="lbMember">Nama</label></div>
                 <div><input type="text" name="tnama_member" value="<?= $nama_member; ?>" readonly></div>
@@ -97,9 +97,9 @@ include "../koneksi.php";
                 <div><label for="lbeksped">Ekspedisi</label></div>
                 <div><input type="text" name="tekspedisi"></div>
                 <div><label for="lbBiayaKirim">Biaya Kirim</label></div>
-                <div><input type="text" name="tbiayaKirim"></div>
+                <div><input type="text" name="tbiayaKirim" value="10000"></div>
                 <div><label for="lbtot_byr">Total Pembayaran</label></div>
-                <div><input type="text" name="ttotalByr"></div>
+                <div><input type="text" name="ttotalByr" value="<?= $sum + 10000 ?>"></div>
                 <div><label for="lbljnsByr">Jenis Pembayaran</label></div>
                 <div><input type="text" name="tjenisByr"></div>
 

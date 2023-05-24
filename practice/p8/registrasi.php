@@ -15,7 +15,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-10">
-                <h1>Registrasi Member</h1>
+                <h1 class="mt-4">Registrasi Member</h1>
                 <form action="insMember.php" method="post" enctype="multipart/form-data">
                     <div class="mb-3">
                         <label for="l1" class="form-label">Nama Member</label>
@@ -39,11 +39,15 @@
                     </div>
                     <div class="mb-3">
                         <label for="l6" class="form-label">User name</label>
-                        <input type="text" class="form-control" id="username" name="tnama_member" placeholder="User name">
+                        <input type="text" class="form-control" id="username" name="tusername" placeholder="User name">
                     </div>
                     <div class="mb-3">
                         <label for="l7" class="form-label">Password</label>
                         <input type="password" class="form-control" id="password" name="tpassword" placeholder="Password">
+                    </div>
+                    <div class="mb-3">
+                        <label for="l8" class="form-label">Gambar</label>
+                        <input type="file" class="form-control" id="ket" name="foto">
                     </div>
 
                     <div class="mb-3">
