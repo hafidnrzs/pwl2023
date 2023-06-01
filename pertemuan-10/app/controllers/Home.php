@@ -2,12 +2,16 @@
 class Home extends Controller {
     public function index()
     {
-        $data['nama'] = "Toko Tanaman Hias";
-        $data['title'] = 'Halaman Home';
-
-        $this->view('templates/header', $data);
-        $this->view('home/index', $data);
-        $this->view('templates/footer');
+        session_start();
+        if (isset($_SESSION["iduser"])) {
+            $this->view('templates/header');
+            $this->view('home/index');
+            $this->view('templates/footer');
+        } else {
+            $this->view('templates/header');
+            $this->view('home/index');
+            $this->view('templates/footer');
+        }
     }
 }
 ?>

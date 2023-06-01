@@ -7,7 +7,7 @@ class Produk extends Controller {
             $_SESSION['cart']['arrCart'] = array();
         }
         $data['title'] = 'Data Produk';
-        $data['produk'] = $this->model('Produk_model')->getAllProduk();
+        $data['produk'] = $this->model('Produk_model')->getAllProduct();
 
         $this->view('templates/header', $data);
         $this->view('produk/index');
