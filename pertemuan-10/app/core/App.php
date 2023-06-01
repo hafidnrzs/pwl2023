@@ -4,7 +4,7 @@ class App {
     protected $method = 'index';
     protected $params = [];
 
-    public function __construct() 
+    public function __construct()
     {
         $url = $this->parseURL();
         if (is_null($url)) {
@@ -24,9 +24,9 @@ class App {
         }
         if (!empty($url)) {
             $this->params = array_values($url); // Mengembalikan array yang isinya semua nilai array
-            // Jalankan controller
-            call_user_func_array([$this->controller, $this->method], $this->params); // mengisikan controller, method dengan arra params
         }
+        // Jalankan controller
+        call_user_func_array([$this->controller, $this->method], $this->params); // mengisikan controller, method dengan arra params
     }
 
     public function parseURL() 
