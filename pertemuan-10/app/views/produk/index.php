@@ -14,9 +14,9 @@
                     <tr>
                         <td><?= $p['nama']; ?></td>
                         <td>
-                            <a href="<?= BASEURL; ?>/produk/detail" class="btn btn-primary">Detail</a>
-                            <a href="<?= BASEURL; ?>/produk/edit" class="btn btn-success">Edit</a>
-                            <a href="<?= BASEURL; ?>/produk/delProduk" class="btn btn-danger">Delete</a>
+                            <a href="<?= BASEURL; ?>/produk/detail/<?= $p['id']; ?>" class="btn btn-primary">Detail</a>
+                            <a href="<?= BASEURL; ?>/produk/edit/<?= $p['id']; ?>" class="btn btn-success">Edit</a>
+                            <a href="<?= BASEURL; ?>/produk/delProduk/<?= $p['id']; ?>" class="btn btn-danger">Delete</a>
                         </td>
                     </tr>
                     <?php endforeach; ?>

@@ -21,7 +21,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="l5" class="form-label">Keterangan</label>
-                    <input type="text" class="form-control" id="l5" name="tket" value="<?= $data['produk']['keterangan']; ?>" required>
+                    <input type="text" class="form-control" id="l5" name="tket" value="<?= $data['produk']['keterangan']; ?>">
                 </div>
                 <div class="mb-3">
                     <label for="l6" class="form-label">Gambar</label>
@@ -32,7 +32,7 @@
                 </div>
                 <div class="mb-3">
                     <button class="btn btn-primary" type="submit">Update</button>
-                    <a href="<?= BASEURL; ?>/produk" class="btn btn-primary mt-2">Kembali</a>
+                    <a href="<?= BASEURL; ?>/produk" class="btn btn-primary">Kembali</a>
                 </div>
             </form>
         </div>

@@ -14,15 +14,15 @@
         </div>
         <div class="mb-3">
             <label for="l5" class="form-label">Keterangan</label>
-            <input type="text" class="form-control" id="l5" name="tket" placeholder="Keterangan" required>
+            <input type="text" class="form-control" id="l5" name="tket" placeholder="Keterangan">
         </div>
         <div class="mb-3">
             <label for="l6" class="form-label">Gambar</label>
             <input type="file" class="form-control" id="l6" name="foto" required>
         </div>
         <div class="mb-3">
-            <button class="btn btn-primary" type="submit">Update</button>
-            <a href="<?= BASEURL; ?>/produk" class="btn btn-primary mt-2">Kembali</a>
+            <button class="btn btn-primary" type="submit">Tambah</button>
+            <a href="<?= BASEURL; ?>/produk" class="btn btn-primary">Kembali</a>
         </div>
     </form>
 </div>
