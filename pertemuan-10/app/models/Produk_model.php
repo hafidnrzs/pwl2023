@@ -79,11 +79,11 @@ class Produk_model {
                 $this->db->query($sql);
                 $this->db->execute();
                 unlink ("img/daun/" . $foto_lama);
-            } else {
-                $sql = "UPDATE " . $this->table . " SET nama='$nama', jml='$jml', hrg='$hrg', keterangan='$keterangan' WHERE id='$id'";
-                $this->db->query($sql);
-                $this->db->execute();
             }
+        } else {
+            $sql = "UPDATE " . $this->table . " SET nama='$nama', jml='$jml', hrg='$hrg', keterangan='$keterangan' WHERE id='$id'";
+            $this->db->query($sql);
+            $this->db->execute();
         }
     }
 

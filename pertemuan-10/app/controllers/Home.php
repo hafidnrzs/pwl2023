@@ -13,7 +13,7 @@ class Home extends Controller {
             $this->view('templates/footer');
         } else {
             $this->view('templates/header', $data);
-            $this->view('home/index');
+            $this->view('user/login');
             $this->view('templates/footer');
         }
     }

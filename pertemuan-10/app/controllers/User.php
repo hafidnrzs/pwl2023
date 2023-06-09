@@ -19,11 +19,12 @@ class User extends Controller {
             $data['user'] = $this->model('User_model')->cekUser($user, $pass);
             if (!$data['user']) {
                 echo "User tidak valid";
+                echo "<meta http-equiv='refresh' content='1; url=". BASEURL ."/home'>";
             } else {
                 // echo "User valid";
                 $_SESSION['iduser'] = $data['user']['iduser'];
                 $_SESSION['username'] = $data['user']['username'];
-                header("Location: ". BASEURL ."/home/dashboard");
+                header("Location: ". BASEURL ."/home");
             }
         }
     }

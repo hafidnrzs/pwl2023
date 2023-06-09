@@ -13,15 +13,15 @@ class Produk extends Controller {
         // $this->view('produk/index', $data);
         // $this->view('templates/footer');
 
-        // if (isset($_SESSION['iduser'])) {
+        if (isset($_SESSION['iduser'])) {
             $data['title'] = 'Data Produk';
             $data['produk'] = $this->model('Produk_model')->getAllProduct();
             $this->view('templates/header', $data);
             $this->view('produk/index', $data);
             $this->view('templates/footer');
-        // } else {
-        //     header("Location: ". BASEURL ."home");
-        // }
+        } else {
+            header("Location: ". BASEURL ."/home");
+        }
     }
 
     public function detail($id)

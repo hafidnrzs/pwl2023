@@ -10,7 +10,7 @@ class User_model {
 
     public function cekUser($user, $pass)
     {
-        $sql = "SELECT * FROM ". $this->table ."WHERE username='$user' AND password='$pass'";
+        $sql = "SELECT * FROM ". $this->table ." WHERE username='$user' AND password='$pass'";
         $this->db->query($sql);
         return $this->db->single();
     }
